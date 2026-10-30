@@ -80,3 +80,17 @@ test('借上文有上限，也不会重复拼同一句', () => {
   assert.ok(拼.length <= 60)
   assert.equal((拼.match(/推/g) || []).length, 1)
 })
+
+// QQ 桥 1.3+ 给每条消息加来源头；且这一轮的输入要等 context 算完才写进会话日志
+test('单独一行的 QQ 来源头只去掉这一行，正文保留', () => {
+  assert.equal(模.清掉注入上下文('【QQ私聊】\n哦哦，那没办法了'), '哦哦，那没办法了')
+  assert.equal(模.清掉注入上下文('【QQ群 摸鱼小组】\n小明：今天吃啥'), '小明：今天吃啥')
+  assert.equal(模.清掉注入上下文('【本机注入】\n提醒他喝水'), '提醒他喝水')
+  assert.equal(模.清掉注入上下文('【你记得的事】\n- 昨天 12:56：吃了火锅\n\n宝宝在吗'), '宝宝在吗')
+})
+test('会话那条和监听那句谁新用谁', () => {
+  assert.equal(模.选更新那句({ text: '上一轮', time: 100 }, { text: '这一轮', time: 200 }), '这一轮')
+  assert.equal(模.选更新那句({ text: '这一轮', time: 300 }, { text: '很早以前', time: 200 }), '这一轮')
+  assert.equal(模.选更新那句({ text: '', time: 0 }, { text: '只有监听', time: 1 }), '只有监听')
+  assert.equal(模.选更新那句({ text: '只有会话', time: 1 }, { text: '', time: 0 }), '只有会话')
+})
