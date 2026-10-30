@@ -31,6 +31,7 @@ function host(mod = plugin, liveAgents = []) {
   const calls = []
   const agent = { options: { provider: 'fixture', model: 'fixture' } }
   const ctx = {
+    connection: { admit: () => ({ peer: { principal: { kind: 'owner' } } }) },
     agents: { list: () => liveAgents, get: () => agent }, sessions: { list: () => [] },
     get: () => null, on: () => () => {}, interval: () => () => {},
     effect: fn => fn(),

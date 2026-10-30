@@ -15,6 +15,7 @@ const directory = join(home, 'fish-memory')
 fs.mkdirSync(directory, { recursive: true })
 const routes = new Map()
 apply({
+  connection: { admit: () => ({ peer: { principal: { kind: 'owner' } } }) },
   agents: { list: () => [], get: () => null }, sessions: { list: () => [] },
   get: () => null, on: () => () => {}, interval: () => () => {}, effect: fn => fn(),
   webServer: { register: ({ path, handler }) => { routes.set(path, handler); return () => {} } },
