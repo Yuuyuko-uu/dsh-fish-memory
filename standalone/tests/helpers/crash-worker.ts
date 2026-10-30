@@ -1,0 +1,10 @@
+import { DatabaseSync } from 'node:sqlite';
+import { join } from 'node:path';
+import { RuntimeStore } from '../../src/runtime/store.ts';
+const home=process.argv[2]!;
+const store=RuntimeStore.open(home,{clock:()=>new Date(process.argv[3]!)});
+if(!store.jobs.claim()) throw new Error('Expected a pending durable job');
+const db=new DatabaseSync(join(home,'memory.sqlite'));
+db.exec("BEGIN IMMEDIATE; CREATE TABLE crash_probe(id INTEGER PRIMARY KEY); INSERT INTO crash_probe VALUES(1);");
+process.stdout.write('ready\n');
+setInterval(()=>{},1000);

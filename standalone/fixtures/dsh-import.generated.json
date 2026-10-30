@@ -1,0 +1,36 @@
+{
+  "synthetic": true,
+  "source_id": "legacy-dsh-demo",
+  "identity_mapping": {
+    "user": "user-demo",
+    "original_ai": "old-ai-demo",
+    "uncertain_pronouns": [
+      "她"
+    ]
+  },
+  "raw_record": {
+    "id": "legacy-001",
+    "text": "我答应在她面试后听她说说。",
+    "textBefore": "我答应听她说说。",
+    "at": null,
+    "createdAt": "2026-10-01T00:00:00Z",
+    "category": "stable_profile",
+    "custom_extension": {
+      "keep_exactly": true,
+      "note": "未知字段保留"
+    },
+    "已被取代": {
+      "被谁": "legacy-002",
+      "为什么": "历史来源标记",
+      "作废于": "2026-10-02T00:00:00Z"
+    }
+  },
+  "expected": {
+    "publication_status": "staged",
+    "narrator_actor_id": "old-ai-demo",
+    "copy_persona": false,
+    "original_category_is_authoritative": false,
+    "raw_snapshot_required": true,
+    "reimport_cannot_restore": true
+  }
+}

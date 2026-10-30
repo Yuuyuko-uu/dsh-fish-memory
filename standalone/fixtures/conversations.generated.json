@@ -1,0 +1,1986 @@
+{
+  "contract_version": "1.0.0",
+  "synthetic": true,
+  "purpose": "Human-labelled contract oracles; not a trained or implemented extractor.",
+  "scenarios": [
+    {
+      "id": "gradual-venting",
+      "description": "平常开场后逐渐表达委屈和倾诉需要。",
+      "acceptance_ids": [
+        "ACC-02",
+        "ACC-06",
+        "ACC-10"
+      ],
+      "actors": [
+        {
+          "id": "user-demo",
+          "companion_id": "companion-demo",
+          "kind": "user",
+          "display_name": "小禾（合成用户）"
+        },
+        {
+          "id": "character-demo",
+          "companion_id": "companion-demo",
+          "kind": "character",
+          "display_name": "澄（合成角色）"
+        },
+        {
+          "id": "friend-demo",
+          "companion_id": "companion-demo",
+          "kind": "third_party",
+          "display_name": "林同事（合成人物）"
+        },
+        {
+          "id": "old-ai-demo",
+          "companion_id": "companion-demo",
+          "kind": "historical_ai",
+          "display_name": "旧助手（合成历史 AI）"
+        },
+        {
+          "id": "unknown-demo",
+          "companion_id": "companion-demo",
+          "kind": "unknown",
+          "display_name": "无法确定的指代"
+        }
+      ],
+      "messages": [
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-1",
+            "sequence": 1,
+            "message_id": "conversation-demo-user-1",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "今天又加班了。",
+          "captured_at": "2026-10-30T10:01:00+08:00",
+          "channel": "visible",
+          "active": true
+        },
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-2",
+            "sequence": 2,
+            "message_id": "conversation-demo-user-2",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "方案已经改第三遍了。",
+          "captured_at": "2026-10-30T10:02:00+08:00",
+          "channel": "visible",
+          "active": true
+        },
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-3",
+            "sequence": 3,
+            "message_id": "conversation-demo-user-3",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "怎么做都没人认可，我觉得很委屈。",
+          "captured_at": "2026-10-30T10:03:00+08:00",
+          "channel": "visible",
+          "active": true
+        },
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-4",
+            "sequence": 4,
+            "message_id": "conversation-demo-user-4",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "我只是想说说，先不用给我建议。",
+          "captured_at": "2026-10-30T10:04:00+08:00",
+          "channel": "visible",
+          "active": true
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence-conversation-demo-user-1",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-1",
+              "sequence": 1,
+              "message_id": "conversation-demo-user-1",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "今天又加班了。",
+          "start": 0,
+          "end": 7
+        },
+        {
+          "id": "evidence-conversation-demo-user-2",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-2",
+              "sequence": 2,
+              "message_id": "conversation-demo-user-2",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "方案已经改第三遍了。",
+          "start": 0,
+          "end": 10
+        },
+        {
+          "id": "evidence-conversation-demo-user-3",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-3",
+              "sequence": 3,
+              "message_id": "conversation-demo-user-3",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "怎么做都没人认可，我觉得很委屈。",
+          "start": 0,
+          "end": 16
+        },
+        {
+          "id": "evidence-conversation-demo-user-4",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-4",
+              "sequence": 4,
+              "message_id": "conversation-demo-user-4",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "我只是想说说，先不用给我建议。",
+          "start": 0,
+          "end": 15
+        }
+      ],
+      "checkpoints": [
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 1
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-overtime",
+              "companion_id": "companion-demo",
+              "version": 1,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:01:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1"
+              ],
+              "kind": "episode",
+              "summary": "用户提到今天加班，暂未明确情绪。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:01:00+08:00",
+              "interpretations": []
+            }
+          ]
+        },
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 2
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-overtime",
+              "companion_id": "companion-demo",
+              "version": 2,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:02:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1",
+                "evidence-conversation-demo-user-2"
+              ],
+              "kind": "episode",
+              "summary": "用户加班修改方案，已反复修改三次。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:02:00+08:00",
+              "interpretations": []
+            }
+          ]
+        },
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 3
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-overtime",
+              "companion_id": "companion-demo",
+              "version": 3,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:03:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1",
+                "evidence-conversation-demo-user-2",
+                "evidence-conversation-demo-user-3"
+              ],
+              "kind": "episode",
+              "summary": "反复修改方案让用户感到努力未被认可，并明确表达委屈。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:03:00+08:00",
+              "interpretations": [
+                {
+                  "id": "episode-overtime-emotion-v3",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "委屈",
+                  "basis_kind": "user_explicit",
+                  "status": "supported",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-overtime"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-3",
+                    "sequence": 3,
+                    "message_id": "conversation-demo-user-3",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-3"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 4
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-overtime",
+              "companion_id": "companion-demo",
+              "version": 4,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:04:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1",
+                "evidence-conversation-demo-user-2",
+                "evidence-conversation-demo-user-3",
+                "evidence-conversation-demo-user-4"
+              ],
+              "kind": "episode",
+              "summary": "用户因反复修改方案感到委屈，本次明确希望先被倾听。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:04:00+08:00",
+              "interpretations": [
+                {
+                  "id": "episode-overtime-emotion-v4",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "委屈",
+                  "basis_kind": "user_explicit",
+                  "status": "supported",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-overtime"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-3",
+                    "sequence": 3,
+                    "message_id": "conversation-demo-user-3",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-3"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                },
+                {
+                  "id": "episode-overtime-response_need-v4",
+                  "kind": "response_need",
+                  "actor_id": "user-demo",
+                  "label": "先倾听，暂不提供建议",
+                  "basis_kind": "user_explicit",
+                  "status": "supported",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-overtime"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-4",
+                    "sequence": 4,
+                    "message_id": "conversation-demo-user-4",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-4"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "actual-emotion-change",
+      "description": "情绪真实改变，不能把后来的难过倒灌到平静阶段。",
+      "acceptance_ids": [
+        "ACC-03"
+      ],
+      "actors": [
+        {
+          "id": "user-demo",
+          "companion_id": "companion-demo",
+          "kind": "user",
+          "display_name": "小禾（合成用户）"
+        },
+        {
+          "id": "character-demo",
+          "companion_id": "companion-demo",
+          "kind": "character",
+          "display_name": "澄（合成角色）"
+        },
+        {
+          "id": "friend-demo",
+          "companion_id": "companion-demo",
+          "kind": "third_party",
+          "display_name": "林同事（合成人物）"
+        },
+        {
+          "id": "old-ai-demo",
+          "companion_id": "companion-demo",
+          "kind": "historical_ai",
+          "display_name": "旧助手（合成历史 AI）"
+        },
+        {
+          "id": "unknown-demo",
+          "companion_id": "companion-demo",
+          "kind": "unknown",
+          "display_name": "无法确定的指代"
+        }
+      ],
+      "messages": [
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-1",
+            "sequence": 1,
+            "message_id": "conversation-demo-user-1",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "刚才还挺平静的。",
+          "captured_at": "2026-10-30T10:01:00+08:00",
+          "channel": "visible",
+          "active": true
+        },
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-2",
+            "sequence": 2,
+            "message_id": "conversation-demo-user-2",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "后来看到那封邮件，我才开始难过。",
+          "captured_at": "2026-10-30T10:02:00+08:00",
+          "channel": "visible",
+          "active": true
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence-conversation-demo-user-1",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-1",
+              "sequence": 1,
+              "message_id": "conversation-demo-user-1",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "刚才还挺平静的。",
+          "start": 0,
+          "end": 8
+        },
+        {
+          "id": "evidence-conversation-demo-user-2",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-2",
+              "sequence": 2,
+              "message_id": "conversation-demo-user-2",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "后来看到那封邮件，我才开始难过。",
+          "start": 0,
+          "end": 16
+        }
+      ],
+      "checkpoints": [
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 1
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-changing",
+              "companion_id": "companion-demo",
+              "version": 1,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:01:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1"
+              ],
+              "kind": "episode",
+              "summary": "用户明确说刚才较平静。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:01:00+08:00",
+              "interpretations": [
+                {
+                  "id": "episode-changing-emotion-v1",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "平静",
+                  "basis_kind": "user_explicit",
+                  "status": "supported",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-changing"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-1",
+                    "sequence": 1,
+                    "message_id": "conversation-demo-user-1",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-1"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 2
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-changing",
+              "companion_id": "companion-demo",
+              "version": 2,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:02:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1",
+                "evidence-conversation-demo-user-2"
+              ],
+              "kind": "episode",
+              "summary": "用户先平静，看到邮件后开始难过。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:02:00+08:00",
+              "interpretations": [
+                {
+                  "id": "changing-calm-v2",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "平静",
+                  "basis_kind": "user_explicit",
+                  "status": "supported",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-changing"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-1",
+                    "sequence": 1,
+                    "message_id": "conversation-demo-user-1",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-1"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                },
+                {
+                  "id": "changing-sad-v2",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "难过",
+                  "basis_kind": "user_explicit",
+                  "status": "supported",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-changing"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-2",
+                    "sequence": 2,
+                    "message_id": "conversation-demo-user-2",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-2"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explicit-correction",
+      "description": "用户纠正先前推断，旧理解保留历史但退出默认理解。",
+      "acceptance_ids": [
+        "ACC-04"
+      ],
+      "actors": [
+        {
+          "id": "user-demo",
+          "companion_id": "companion-demo",
+          "kind": "user",
+          "display_name": "小禾（合成用户）"
+        },
+        {
+          "id": "character-demo",
+          "companion_id": "companion-demo",
+          "kind": "character",
+          "display_name": "澄（合成角色）"
+        },
+        {
+          "id": "friend-demo",
+          "companion_id": "companion-demo",
+          "kind": "third_party",
+          "display_name": "林同事（合成人物）"
+        },
+        {
+          "id": "old-ai-demo",
+          "companion_id": "companion-demo",
+          "kind": "historical_ai",
+          "display_name": "旧助手（合成历史 AI）"
+        },
+        {
+          "id": "unknown-demo",
+          "companion_id": "companion-demo",
+          "kind": "unknown",
+          "display_name": "无法确定的指代"
+        }
+      ],
+      "messages": [
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-1",
+            "sequence": 1,
+            "message_id": "conversation-demo-user-1",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "今天一句话也不想说。",
+          "captured_at": "2026-10-30T10:01:00+08:00",
+          "channel": "visible",
+          "active": true
+        },
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-2",
+            "sequence": 2,
+            "message_id": "conversation-demo-user-2",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "刚才不是难过，我只是累了。",
+          "captured_at": "2026-10-30T10:02:00+08:00",
+          "channel": "visible",
+          "active": true
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence-conversation-demo-user-1",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-1",
+              "sequence": 1,
+              "message_id": "conversation-demo-user-1",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "今天一句话也不想说。",
+          "start": 0,
+          "end": 10
+        },
+        {
+          "id": "evidence-conversation-demo-user-2",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-2",
+              "sequence": 2,
+              "message_id": "conversation-demo-user-2",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "刚才不是难过，我只是累了。",
+          "start": 0,
+          "end": 13
+        }
+      ],
+      "checkpoints": [
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 1
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-corrected",
+              "companion_id": "companion-demo",
+              "version": 1,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:01:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1"
+              ],
+              "kind": "episode",
+              "summary": "用户不想说话，可能难过，尚未确认。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:01:00+08:00",
+              "interpretations": [
+                {
+                  "id": "episode-corrected-emotion-v1",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "可能难过",
+                  "basis_kind": "context_inferred",
+                  "status": "tentative",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-corrected"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-1",
+                    "sequence": 1,
+                    "message_id": "conversation-demo-user-1",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-1"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 2
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-corrected",
+              "companion_id": "companion-demo",
+              "version": 2,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:02:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1",
+                "evidence-conversation-demo-user-2"
+              ],
+              "kind": "episode",
+              "summary": "用户纠正了之前的理解，明确表示自己只是疲惫。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:02:00+08:00",
+              "interpretations": [
+                {
+                  "id": "corrected-old-reading-v2",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "可能难过",
+                  "basis_kind": "context_inferred",
+                  "status": "corrected",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-corrected"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-1",
+                    "sequence": 1,
+                    "message_id": "conversation-demo-user-1",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-1"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": "episode-corrected-emotion-v2"
+                },
+                {
+                  "id": "episode-corrected-emotion-v2",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "疲惫",
+                  "basis_kind": "user_explicit",
+                  "status": "supported",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-corrected"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-2",
+                    "sequence": 2,
+                    "message_id": "conversation-demo-user-2",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-2"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "historical-emotion",
+      "description": "历史害怕与现在不害怕必须区分。",
+      "acceptance_ids": [
+        "ACC-03",
+        "ACC-08"
+      ],
+      "actors": [
+        {
+          "id": "user-demo",
+          "companion_id": "companion-demo",
+          "kind": "user",
+          "display_name": "小禾（合成用户）"
+        },
+        {
+          "id": "character-demo",
+          "companion_id": "companion-demo",
+          "kind": "character",
+          "display_name": "澄（合成角色）"
+        },
+        {
+          "id": "friend-demo",
+          "companion_id": "companion-demo",
+          "kind": "third_party",
+          "display_name": "林同事（合成人物）"
+        },
+        {
+          "id": "old-ai-demo",
+          "companion_id": "companion-demo",
+          "kind": "historical_ai",
+          "display_name": "旧助手（合成历史 AI）"
+        },
+        {
+          "id": "unknown-demo",
+          "companion_id": "companion-demo",
+          "kind": "unknown",
+          "display_name": "无法确定的指代"
+        }
+      ],
+      "messages": [
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-1",
+            "sequence": 1,
+            "message_id": "conversation-demo-user-1",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "2025 年那次面试我很害怕，不过现在已经不怕了。",
+          "captured_at": "2026-10-30T10:01:00+08:00",
+          "channel": "visible",
+          "active": true
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence-conversation-demo-user-1",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-1",
+              "sequence": 1,
+              "message_id": "conversation-demo-user-1",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "2025 年那次面试我很害怕，不过现在已经不怕了。",
+          "start": 0,
+          "end": 25
+        }
+      ],
+      "checkpoints": [
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 1
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-past-emotion",
+              "companion_id": "companion-demo",
+              "version": 1,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:01:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1"
+              ],
+              "kind": "episode",
+              "summary": "用户回忆 2025 年面试时害怕，并明确说现在已不再害怕。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "basis": "user_explicit",
+                "evidence_ids": [
+                  "evidence-conversation-demo-user-1"
+                ],
+                "precision": "year",
+                "start": "2025",
+                "end": null
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:01:00+08:00",
+              "interpretations": [
+                {
+                  "id": "episode-past-emotion-emotion-v1",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "当时害怕",
+                  "basis_kind": "user_explicit",
+                  "status": "supported",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-past-emotion"
+                  },
+                  "felt_time": {
+                    "basis": "user_explicit",
+                    "evidence_ids": [
+                      "evidence-conversation-demo-user-1"
+                    ],
+                    "precision": "year",
+                    "start": "2025",
+                    "end": null
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-1",
+                    "sequence": 1,
+                    "message_id": "conversation-demo-user-1",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-1"
+                  ],
+                  "temporal_update": "retrospective",
+                  "retrospective_evidence_ids": [
+                    "evidence-conversation-demo-user-1"
+                  ],
+                  "superseded_by": null
+                },
+                {
+                  "id": "past-now-v1",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "现在已不再害怕",
+                  "basis_kind": "user_explicit",
+                  "status": "supported",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-past-emotion"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-1",
+                    "sequence": 1,
+                    "message_id": "conversation-demo-user-1",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-1"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quoted-third-party",
+      "description": "引文中的我指第三方，不是当前用户。",
+      "acceptance_ids": [
+        "ACC-12",
+        "ACC-33"
+      ],
+      "actors": [
+        {
+          "id": "user-demo",
+          "companion_id": "companion-demo",
+          "kind": "user",
+          "display_name": "小禾（合成用户）"
+        },
+        {
+          "id": "character-demo",
+          "companion_id": "companion-demo",
+          "kind": "character",
+          "display_name": "澄（合成角色）"
+        },
+        {
+          "id": "friend-demo",
+          "companion_id": "companion-demo",
+          "kind": "third_party",
+          "display_name": "林同事（合成人物）"
+        },
+        {
+          "id": "old-ai-demo",
+          "companion_id": "companion-demo",
+          "kind": "historical_ai",
+          "display_name": "旧助手（合成历史 AI）"
+        },
+        {
+          "id": "unknown-demo",
+          "companion_id": "companion-demo",
+          "kind": "unknown",
+          "display_name": "无法确定的指代"
+        }
+      ],
+      "messages": [
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-1",
+            "sequence": 1,
+            "message_id": "conversation-demo-user-1",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "林同事说“我很难过”，我现在只是转述这句话。",
+          "captured_at": "2026-10-30T10:01:00+08:00",
+          "channel": "visible",
+          "active": true
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence-conversation-demo-user-1",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-1",
+              "sequence": 1,
+              "message_id": "conversation-demo-user-1",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "林同事说“我很难过”，我现在只是转述这句话。",
+          "start": 0,
+          "end": 22
+        }
+      ],
+      "checkpoints": [
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 1
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-quoted-friend",
+              "companion_id": "companion-demo",
+              "version": 1,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:01:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1"
+              ],
+              "kind": "episode",
+              "summary": "用户转述林同事的难过，没有表达自己难过。",
+              "details": "",
+              "participant_ids": [
+                "user-demo",
+                "friend-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:01:00+08:00",
+              "interpretations": [
+                {
+                  "id": "episode-quoted-friend-emotion-v1",
+                  "kind": "emotion",
+                  "actor_id": "friend-demo",
+                  "label": "据用户转述，当时难过",
+                  "basis_kind": "context_inferred",
+                  "status": "tentative",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-quoted-friend"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-1",
+                    "sequence": 1,
+                    "message_id": "conversation-demo-user-1",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-1"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unknown-time-and-person",
+      "description": "不明日期和人物保留未知，不用入库时间补齐。",
+      "acceptance_ids": [
+        "ACC-14",
+        "ACC-33"
+      ],
+      "actors": [
+        {
+          "id": "user-demo",
+          "companion_id": "companion-demo",
+          "kind": "user",
+          "display_name": "小禾（合成用户）"
+        },
+        {
+          "id": "character-demo",
+          "companion_id": "companion-demo",
+          "kind": "character",
+          "display_name": "澄（合成角色）"
+        },
+        {
+          "id": "friend-demo",
+          "companion_id": "companion-demo",
+          "kind": "third_party",
+          "display_name": "林同事（合成人物）"
+        },
+        {
+          "id": "old-ai-demo",
+          "companion_id": "companion-demo",
+          "kind": "historical_ai",
+          "display_name": "旧助手（合成历史 AI）"
+        },
+        {
+          "id": "unknown-demo",
+          "companion_id": "companion-demo",
+          "kind": "unknown",
+          "display_name": "无法确定的指代"
+        }
+      ],
+      "messages": [
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-1",
+            "sequence": 1,
+            "message_id": "conversation-demo-user-1",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "记不清哪一天了，那个人后来陪我走了一段路。",
+          "captured_at": "2026-10-30T10:01:00+08:00",
+          "channel": "visible",
+          "active": true
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence-conversation-demo-user-1",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-1",
+              "sequence": 1,
+              "message_id": "conversation-demo-user-1",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "记不清哪一天了，那个人后来陪我走了一段路。",
+          "start": 0,
+          "end": 21
+        }
+      ],
+      "checkpoints": [
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 1
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-unknown-person",
+              "companion_id": "companion-demo",
+              "version": 1,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "staged",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:01:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1"
+              ],
+              "kind": "episode",
+              "summary": "用户回忆有人陪自己走路，时间和对方身份不清楚。",
+              "details": "",
+              "participant_ids": [
+                "user-demo",
+                "unknown-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:01:00+08:00",
+              "interpretations": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conditional-expression",
+      "description": "多个独立语境提供相反例，不把口头禅固定成情绪判断。",
+      "acceptance_ids": [
+        "ACC-07"
+      ],
+      "actors": [
+        {
+          "id": "user-demo",
+          "companion_id": "companion-demo",
+          "kind": "user",
+          "display_name": "小禾（合成用户）"
+        },
+        {
+          "id": "character-demo",
+          "companion_id": "companion-demo",
+          "kind": "character",
+          "display_name": "澄（合成角色）"
+        },
+        {
+          "id": "friend-demo",
+          "companion_id": "companion-demo",
+          "kind": "third_party",
+          "display_name": "林同事（合成人物）"
+        },
+        {
+          "id": "old-ai-demo",
+          "companion_id": "companion-demo",
+          "kind": "historical_ai",
+          "display_name": "旧助手（合成历史 AI）"
+        },
+        {
+          "id": "unknown-demo",
+          "companion_id": "companion-demo",
+          "kind": "unknown",
+          "display_name": "无法确定的指代"
+        }
+      ],
+      "messages": [
+        {
+          "ref": {
+            "conversation_id": "style-one",
+            "branch_id": "main",
+            "turn_id": "style-one-turn-1",
+            "sequence": 1,
+            "message_id": "style-one-user-1",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "没事，我现在心情挺好的。",
+          "captured_at": "2026-10-30T10:01:00+08:00",
+          "channel": "visible",
+          "active": true
+        },
+        {
+          "ref": {
+            "conversation_id": "style-two",
+            "branch_id": "main",
+            "turn_id": "style-two-turn-1",
+            "sequence": 1,
+            "message_id": "style-two-user-1",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "今天很难受，但先不聊了，没事。",
+          "captured_at": "2026-10-30T10:01:00+08:00",
+          "channel": "visible",
+          "active": true
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence-style-one-user-1",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "style-one",
+              "branch_id": "main",
+              "turn_id": "style-one-turn-1",
+              "sequence": 1,
+              "message_id": "style-one-user-1",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "没事，我现在心情挺好的。",
+          "start": 0,
+          "end": 12
+        },
+        {
+          "id": "evidence-style-two-user-1",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "style-two",
+              "branch_id": "main",
+              "turn_id": "style-two-turn-1",
+              "sequence": 1,
+              "message_id": "style-two-user-1",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "今天很难受，但先不聊了，没事。",
+          "start": 0,
+          "end": 15
+        }
+      ],
+      "checkpoints": [
+        {
+          "through": {
+            "conversation_id": "style-one",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 1
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-style-context",
+              "companion_id": "companion-demo",
+              "version": 1,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:01:00+08:00",
+              "evidence_ids": [
+                "evidence-style-one-user-1",
+                "evidence-style-two-user-1"
+              ],
+              "kind": "episode",
+              "summary": "“没事”在不同语境中含义不同，不能形成绝对规则。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:01:00+08:00",
+              "interpretations": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unicode-evidence",
+      "description": "Unicode 码点定位证据，表情不导致截断或错位。",
+      "acceptance_ids": [
+        "ACC-08"
+      ],
+      "actors": [
+        {
+          "id": "user-demo",
+          "companion_id": "companion-demo",
+          "kind": "user",
+          "display_name": "小禾（合成用户）"
+        },
+        {
+          "id": "character-demo",
+          "companion_id": "companion-demo",
+          "kind": "character",
+          "display_name": "澄（合成角色）"
+        },
+        {
+          "id": "friend-demo",
+          "companion_id": "companion-demo",
+          "kind": "third_party",
+          "display_name": "林同事（合成人物）"
+        },
+        {
+          "id": "old-ai-demo",
+          "companion_id": "companion-demo",
+          "kind": "historical_ai",
+          "display_name": "旧助手（合成历史 AI）"
+        },
+        {
+          "id": "unknown-demo",
+          "companion_id": "companion-demo",
+          "kind": "unknown",
+          "display_name": "无法确定的指代"
+        }
+      ],
+      "messages": [
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-1",
+            "sequence": 1,
+            "message_id": "conversation-demo-user-1",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "今天去了海边😀，我很开心。",
+          "captured_at": "2026-10-30T10:01:00+08:00",
+          "channel": "visible",
+          "active": true
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence-conversation-demo-user-1",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-1",
+              "sequence": 1,
+              "message_id": "conversation-demo-user-1",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "今天去了海边😀，我很开心。",
+          "start": 0,
+          "end": 13
+        }
+      ],
+      "checkpoints": [
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 1
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "episode-unicode",
+              "companion_id": "companion-demo",
+              "version": 1,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:01:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1"
+              ],
+              "kind": "episode",
+              "summary": "用户去海边后明确表达开心，具体事件日期未确定。",
+              "details": "",
+              "participant_ids": [
+                "user-demo"
+              ],
+              "occurred": {
+                "precision": "unknown",
+                "start": null,
+                "end": null,
+                "basis": "unknown",
+                "evidence_ids": []
+              },
+              "topic_status": "ongoing",
+              "storage_tier": "hot",
+              "last_effective_mention_at": "2026-10-30T10:01:00+08:00",
+              "interpretations": [
+                {
+                  "id": "episode-unicode-emotion-v1",
+                  "kind": "emotion",
+                  "actor_id": "user-demo",
+                  "label": "开心",
+                  "basis_kind": "user_explicit",
+                  "status": "supported",
+                  "scope": {
+                    "kind": "episode",
+                    "id": "episode-unicode"
+                  },
+                  "felt_time": {
+                    "precision": "unknown",
+                    "start": null,
+                    "end": null,
+                    "basis": "unknown",
+                    "evidence_ids": []
+                  },
+                  "expressed_at": {
+                    "conversation_id": "conversation-demo",
+                    "branch_id": "main",
+                    "turn_id": "conversation-demo-turn-1",
+                    "sequence": 1,
+                    "message_id": "conversation-demo-user-1",
+                    "revision": 1
+                  },
+                  "evidence_ids": [
+                    "evidence-conversation-demo-user-1"
+                  ],
+                  "temporal_update": "as_expressed",
+                  "retrospective_evidence_ids": [],
+                  "superseded_by": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explicit-long-term-preference",
+      "description": "用户明确说明长期适用的回应偏好。",
+      "acceptance_ids": [
+        "ACC-06",
+        "ACC-27"
+      ],
+      "actors": [
+        {
+          "id": "user-demo",
+          "companion_id": "companion-demo",
+          "kind": "user",
+          "display_name": "小禾（合成用户）"
+        },
+        {
+          "id": "character-demo",
+          "companion_id": "companion-demo",
+          "kind": "character",
+          "display_name": "澄（合成角色）"
+        },
+        {
+          "id": "friend-demo",
+          "companion_id": "companion-demo",
+          "kind": "third_party",
+          "display_name": "林同事（合成人物）"
+        },
+        {
+          "id": "old-ai-demo",
+          "companion_id": "companion-demo",
+          "kind": "historical_ai",
+          "display_name": "旧助手（合成历史 AI）"
+        },
+        {
+          "id": "unknown-demo",
+          "companion_id": "companion-demo",
+          "kind": "unknown",
+          "display_name": "无法确定的指代"
+        }
+      ],
+      "messages": [
+        {
+          "ref": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "turn_id": "conversation-demo-turn-1",
+            "sequence": 1,
+            "message_id": "conversation-demo-user-1",
+            "revision": 1
+          },
+          "companion_id": "companion-demo",
+          "actor_id": "user-demo",
+          "role": "user",
+          "text": "以后我难受的时候，希望你先听完，再给建议。",
+          "captured_at": "2026-10-30T10:01:00+08:00",
+          "channel": "visible",
+          "active": true
+        }
+      ],
+      "evidence": [
+        {
+          "id": "evidence-conversation-demo-user-1",
+          "companion_id": "companion-demo",
+          "source": {
+            "kind": "message",
+            "ref": {
+              "conversation_id": "conversation-demo",
+              "branch_id": "main",
+              "turn_id": "conversation-demo-turn-1",
+              "sequence": 1,
+              "message_id": "conversation-demo-user-1",
+              "revision": 1
+            }
+          },
+          "speaker_actor_id": "user-demo",
+          "quote": "以后我难受的时候，希望你先听完，再给建议。",
+          "start": 0,
+          "end": 21
+        }
+      ],
+      "checkpoints": [
+        {
+          "through": {
+            "conversation_id": "conversation-demo",
+            "branch_id": "main",
+            "chain_revision": 1,
+            "sequence": 1
+          },
+          "expected_records": [
+            {
+              "contract_version": "1.0.0",
+              "id": "pattern-listen-first",
+              "companion_id": "companion-demo",
+              "version": 1,
+              "suppression_generation": 0,
+              "content_status": "active",
+              "publication_status": "published",
+              "created_at": "2026-10-30T10:01:00+08:00",
+              "updated_at": "2026-10-30T10:01:00+08:00",
+              "evidence_ids": [
+                "evidence-conversation-demo-user-1"
+              ],
+              "kind": "communication_pattern",
+              "pattern_kind": "explicit_preference",
+              "scope": {
+                "kind": "companion",
+                "id": "companion-demo"
+              },
+              "content": "用户难受时希望先听完，再给建议。",
+              "conditions": [
+                "用户表达难受时"
+              ],
+              "counterexample_evidence_ids": [],
+              "independent_context_ids": [
+                "conversation-demo"
+              ],
+              "counterexamples_reviewed": false,
+              "status": "user_confirmed"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
