@@ -146,6 +146,13 @@ test('trace persistence failure does not discard a valid read-only recall', asyn
   const expected = recallText()
   assert.match(expected, /Synthetic original memory/)
   const before = fs.readFileSync(file(sid), 'utf8')
+  // ⭐ 1.5.2：同一次请求里 text() 会被调 3~4 遍，加了 1.5 秒缓存 ——
+  //   紧接着的那一遍**不该再检索、也不该再写盘**（这正是缓存的目的）。
+  const 紧接 = await inject(sid, 'write', async () => ({ result: { text: recallText() } }))
+  assert.equal(紧接.hits, 0, '同一次请求里的第二遍该走缓存，不该再写盘')
+  assert.equal(紧接.response.result.text, expected)
+  // 缓存过期之后重新算：这时**写盘失败也不能把已经算出来的记忆吞掉**（原来那条要求还成立）。
+  await new Promise((r) => setTimeout(r, 1600))
   const { response, hits } = await inject(sid, 'write', async () => ({ result: { text: recallText() } }))
   assert.equal(hits, 1)
   assert.equal(response.result.text, expected, 'optional trace writes must not suppress valid memory')
