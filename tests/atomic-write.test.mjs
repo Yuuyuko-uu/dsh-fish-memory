@@ -16,7 +16,7 @@ fs.mkdirSync(directory, { recursive: true })
 const routes = new Map()
 apply({
   agents: { list: () => [], get: () => null }, sessions: { list: () => [] },
-  get: () => null, on: () => () => {}, interval: () => () => {}, effect: fn => fn(),
+  get: (名) => (名 === 'connection' ? { requestRejection: () => undefined } : null), on: () => () => {}, interval: () => () => {}, effect: fn => fn(),
   webServer: { register: ({ path, handler }) => { routes.set(path, handler); return () => {} } },
 })
 async function post(path, body) {
@@ -140,7 +140,7 @@ test('trace persistence failure does not discard a valid read-only recall', asyn
     } },
   }
   apply({ agents: { list: () => [agent], get: () => agent }, sessions: { list: () => [] },
-    get: () => null, on: () => () => {}, interval: () => () => {}, effect: fn => fn(),
+    get: (名) => (名 === 'connection' ? { requestRejection: () => undefined } : null), on: () => () => {}, interval: () => () => {}, effect: fn => fn(),
     webServer: { register: () => () => {} } })
   assert.equal(typeof recallText, 'function', 'actual per-agent prompt hook must mount')
   const expected = recallText()
