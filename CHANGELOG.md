@@ -1,3 +1,14 @@
+## 1.5.8 — 2026-11-08
+
+**修「检查更新 / 一键更新」在桌面端挂不上（issue #36）**
+
+- 🐞 `自查更新.register(ctx, …)` 递的是**裸 ctx**，而它内部直接用 `ctx.webServer` ——
+  没有 webServer 注入就抛 `cannot get property "webServer" without inject`，
+  两个路由都没挂上，设置页那两个按钮点了没反应（1.5.6 引入）。
+- 现在跟 `mroute()` 一样，先用 `ctx.inject(['webServer'], …)` 声明依赖；
+  没有 `ctx.inject` 的老宿主仍然退回裸 ctx。
+- 📄 README 里「长期事实每轮都在」那两行已经过期（1.5.7 删了），改成「记忆不会每轮都塞进上下文」。
+
 ## 1.5.7 — 2026-11-08
 
 **删掉「长期事实每轮带几条」**
