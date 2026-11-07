@@ -32,7 +32,9 @@ function host(mod = plugin, liveAgents = []) {
   const agent = { options: { provider: 'fixture', model: 'fixture' } }
   const ctx = {
     agents: { list: () => liveAgents, get: () => agent }, sessions: { list: () => [] },
-    get: () => null, on: () => () => {}, interval: () => () => {},
+    // ⭐ 1.5.7：管理接口改成「失败即拒绝」—— 假 ctx 也得有 connection，不然全 503
+    get: (名) => (名 === 'connection' ? { requestRejection: () => undefined } : null),
+    on: () => () => {}, interval: () => () => {},
     effect: fn => fn(),
     webServer: { register: ({ path, handler }) => { routes.set(path, handler); return () => {} } },
     llm: { async *stream() {
