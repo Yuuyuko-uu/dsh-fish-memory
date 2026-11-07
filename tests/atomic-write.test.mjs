@@ -128,8 +128,7 @@ test('trace persistence failure does not discard a valid read-only recall', asyn
   seed(sid)
   const store = JSON.parse(fs.readFileSync(file(sid), 'utf8'))
   store.policy = { queryGate: 0, threshold: 0 }
-  store.memories[0].category = 'stable_profile'
-  store.memories[0].importance = 1
+  // ⭐ 1.5.7：长期事实那层删了 —— 这条改用普通事件，靠「查询词命中」进来
   fs.writeFileSync(file(sid), JSON.stringify(store))
   fs.writeFileSync(join(home, 'fish-memory-config.json'), JSON.stringify({ switchMigrated: true, sessions: { [sid]: true } }))
   let recallText
