@@ -51,3 +51,29 @@ test('正经实词照样能命中（别把安全垫拆坏了）', () => {
   const r = recall(loadStore(sid), '三国那段历史你记得吗', 现在, sid)
   assert.ok(r.selected.some((x) => x.m.id === 'm1'), '真问到历史，这条要能想起来')
 })
+
+test('词表里的单字也不当证据（「源」在词典.txt 里有词条，但只是切分边界）', () => {
+  const sid = 's-dict1'
+  writeFileSync(库(sid), JSON.stringify({
+    version: 2,
+    policy: { threshold: 0.3, rarityK: 0.8, queryGate: 0 },
+    memories: [事件('m1', '老猫是魂游老玩家，最喜欢对《影之刃零》的连招研究')],
+    deleted: [],
+    traces: [],
+  }))
+  const r = recall(loadStore(sid), '对的对的，我家小源还是我的宝', 现在, sid)
+  assert.deepEqual(r.selected.map((x) => x.m.id), [], '单字「源」「对」都不该把它拽进来')
+})
+
+test('整句只剩单字时还留着（短句不能一条都想不起来）', () => {
+  const sid = 's-short'
+  writeFileSync(库(sid), JSON.stringify({
+    version: 2,
+    policy: { threshold: 0.1, rarityK: 0.8, queryGate: 0 },
+    memories: [事件('m1', '猫今天又把杯子碰倒了')],
+    deleted: [],
+    traces: [],
+  }))
+  const r = recall(loadStore(sid), '猫', 现在, sid)
+  assert.ok(r.selected.some((x) => x.m.id === 'm1'), '单字短句照样能想起来')
+})
