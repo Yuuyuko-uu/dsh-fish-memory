@@ -132,8 +132,10 @@ test('trace persistence failure does not discard a valid read-only recall', asyn
   fs.writeFileSync(file(sid), JSON.stringify(store))
   fs.writeFileSync(join(home, 'fish-memory-config.json'), JSON.stringify({ switchMigrated: true, sessions: { [sid]: true } }))
   let recallText
+  // ⭐ 1.6.2：注入缓存改成「一条用户消息 = 一次检索」—— 模拟她发新话，就换个末句
+  let 最后一句 = 'Synthetic original memory'
   const agent = {
-    session: { id: sid, snapshotEvents: () => [{ type: 'user/message', data: { text: 'Synthetic original memory' } }] },
+    session: { id: sid, snapshotEvents: () => [{ type: 'user/message', data: { text: 最后一句 } }] },
     ctx: { on: () => () => {}, tools: { register: () => () => {} }, systemPrompt: {
       section: () => () => {}, context: ({ text }) => { recallText = text; return () => {} },
     } },
@@ -150,8 +152,9 @@ test('trace persistence failure does not discard a valid read-only recall', asyn
   const 紧接 = await inject(sid, 'write', async () => ({ result: { text: recallText() } }))
   assert.equal(紧接.hits, 0, '同一次请求里的第二遍该走缓存，不该再写盘')
   assert.equal(紧接.response.result.text, expected)
-  // 缓存过期之后重新算：这时**写盘失败也不能把已经算出来的记忆吞掉**（原来那条要求还成立）。
-  await new Promise((r) => setTimeout(r, 1600))
+  // ⭐ 1.6.2：她**又说了句话** → 这次必须重算（不再是「等 1.5 秒过期」）。
+  //   这时**写盘失败也不能把已经算出来的记忆吞掉**（原来那条要求还成立）。
+  最后一句 = 'Synthetic original memory，再说一句'
   const { response, hits } = await inject(sid, 'write', async () => ({ result: { text: recallText() } }))
   assert.equal(hits, 1)
   assert.equal(response.result.text, expected, 'optional trace writes must not suppress valid memory')
