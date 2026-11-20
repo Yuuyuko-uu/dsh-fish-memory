@@ -150,6 +150,29 @@ test('插件替她开口的那种（speak-up / her-words）不算她说的', () 
   assert.equal(模.挑这一轮的真话(ev), '我回来了')
 })
 
+// ⭐ 1.6.4：3D 房间插件（dsh-fish-home）后台推的东西也不算她说的。
+//   以前只认 speak-up / fishbuddy-watch 这几种，它那四个 kind 漏在名单外，
+//   于是「作物已成熟」这种通知被当成她这一轮说的话去检索，
+//   通知里那几个字一对上就翻出一堆风马牛不相及的旧记忆。
+test('房间插件后台推的状态变化与主动生活，不算她说的', () => {
+  const ev = [
+    事件('user/message', 'fish-home-life', '【房间】作物已成熟：萝卜×33。'),
+    事件('user/message', 'fish-home-state', '【房间状态更新】窗外天气变成下雨。'),
+    事件('user/message', 'fish-home', '我从房间里打一句话'),
+  ]
+  assert.equal(模.挑这一轮的真话(ev), '我从房间里打一句话')
+})
+
+// ⚠ 「fish-home」那一个**必须留在人话这边** —— 那是人在房间输入框里亲手打的字。
+test('摸头、画架这类房内互动也不算她说的', () => {
+  const ev = [
+    事件('user/message', 'fish-home-touch', '【房间互动】她刚摸了摸你的头。'),
+    事件('user/message', 'fish-home-paint', '【房间互动】她刚在画架上点了「画画」。'),
+    事件('user/message', 'user', '我在呢'),
+  ]
+  assert.equal(模.挑这一轮的真话(ev), '我在呢')
+})
+
 test('时间那条 / 技能目录那条也跳过', () => {
   const ev = [
     事件('user/message', 'user', '帮我看看这个 bug'),
